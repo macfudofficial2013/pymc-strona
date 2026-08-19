@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>PYMC.PL</title>
+
+    <link rel="icon"
+          href="logopymc.png"
+          type="image/png">
+
+    <link rel="stylesheet"
+          href="style.css">
+
+</head>
+
+<body>
+
+<header class="top">
+    <div class="container top-content">
+
+        <div class="brand">
+            <div class="logo">
+                RP
+            </div>
+
+            <div>
+                <strong>Portal Administracji</strong>
+                <span>PYMC.PL</span>
+            </div>
+        </div>
+
+        <button class="menu-button" onclick="toggleMenu()">
+            ☰ MENU
+        </button>
+
+    </div>
+</header>
+
+
+<nav id="navigation">
+    <div class="container nav-content">
+
+        <a class="active" href="index.html">Home</a>
+        <a href="zarzad.html">Zarząd</a>
+        <a href="palac-narodowy.html">Pałac Narodowy</a>
+        <a href="regulamin.html">Regulamin</a>
+        <a href="departament.html">
+            Departament Bezpieczeństwa i Cyfryzacji
+        </a>
+
+    </div>
+</nav>
+
+
+<main>
+
+<section class="hero">
+    <div class="container">
+
+        <div class="breadcrumbs">
+            Strona główna
+        </div>
+
+        <h1>Portal Administracji</h1>
+
+        <p class="hero-description">
+            Oficjalny portal informacyjny administracji
+            serwera Minecraft.
+        </p>
+
+        <div class="server-box">
+
+            <div>
+                <span>ADRES SERWERA</span>
+                <strong id="server-ip">
+                    play.twojserwer.pl
+                </strong>
+            </div>
+
+            <button onclick="copyIP()">
+                KOPIUJ IP
+            </button>
+
+        </div>
+
+    </div>
+</section>
+
+
+<section class="section">
+    <div class="container">
+
+        <h2>Aktualności</h2>
+
+        <div class="red-line"></div>
+
+        <div class="news">
+
+            <article>
+                <span class="date">
+                    19.08.2026
+                </span>
+
+                <h3>
+                    Uruchomiono nowy portal administracyjny
+                </h3>
+
+                <p>
+                    Administracja serwera uruchomiła nowy
+                    portal informacyjny.
+                </p>
+
+                <a href="#">
+                    Czytaj więcej →
+                </a>
+            </article>
+
+
+            <article>
+                <span class="date">
+                    18.08.2026
+                </span>
+
+                <h3>
+                    Aktualizacja zasad bezpieczeństwa
+                </h3>
+
+                <p>
+                    Wprowadzono nowe zasady dotyczące
+                    bezpieczeństwa oraz ochrony danych.
+                </p>
+
+                <a href="regulamin.html">
+                    Zobacz regulamin →
+                </a>
+            </article>
+
+
+            <article>
+                <span class="date">
+                    15.08.2026
+                </span>
+
+                <h3>
+                    Departament Bezpieczeństwa i Cyfryzacji
+                </h3>
+
+                <p>
+                    Rozpoczęto działalność nowego departamentu
+                    odpowiedzialnego za bezpieczeństwo serwera.
+                </p>
+
+                <a href="departament.html">
+                    Dowiedz się więcej →
+                </a>
+            </article>
+
+        </div>
+
+    </div>
+</section>
+
+
+<section class="gray-section">
+
+    <div class="container">
+
+        <h2>Najważniejsze informacje</h2>
+
+        <div class="cards">
+
+            <a href="zarzad.html" class="card">
+                <span class="card-icon">01</span>
+                <h3>Zarząd</h3>
+                <p>
+                    Informacje o osobach zarządzających
+                    serwerem oraz strukturze administracji.
+                </p>
+            </a>
+
+
+            <a href="palac-narodowy.html" class="card">
+                <span class="card-icon">02</span>
+                <h3>Pałac Narodowy</h3>
+                <p>
+                    Informacje dotyczące Pałacu Narodowego
+                    oraz jego funkcji na serwerze.
+                </p>
+            </a>
+
+
+            <a href="regulamin.html" class="card">
+                <span class="card-icon">03</span>
+                <h3>Regulamin</h3>
+                <p>
+                    Zasady obowiązujące wszystkich
+                    użytkowników serwera.
+                </p>
+            </a>
+
+
+            <a href="departament.html" class="card">
+                <span class="card-icon">04</span>
+                <h3>Bezpieczeństwo i Cyfryzacja</h3>
+                <p>
+                    Informacje dotyczące bezpieczeństwa,
+                    systemów cyfrowych i administracji PYMC.PL
+                </p>
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+</main>
+
+
+<footer>
+
+    <div class="container footer-grid">
+
+        <div>
+            <strong>Portal Informacyjny Pałacu Narodowego</strong>
+
+            <p>
+                Pałac Narodowy PYMC.PL
+            </p>
+        </div>
+
+
+        <div>
+            <strong>Na skróty</strong>
+
+            <a href="index.html">Home</a>
+            <a href="zarzad.html">Zarząd</a>
+            <a href="regulamin.html">Regulamin</a>
+        </div>
+
+
+        <div>
+            <strong>Kontakt</strong>
+
+            <p>
+                Discord: discord.gg/twojserwer
+            </p>
+
+            <p>
+                IP: 
+            </p>
+        </div>
+
+    </div>
+
+
+    <div class="copyright">
+        © 2026 Pałac Narodowy - PYMC.PL
+    </div>
+
+</footer>
+
+
+<script src="script.js"></script>
+
+</body>
+</html>

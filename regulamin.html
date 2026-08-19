@@ -1,0 +1,1386 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Regulamin — PYMC.PL</title>
+
+    <link rel="icon"
+      href="logopymc.png"
+      type="image/png">
+
+    <link rel="stylesheet"
+          href="style.css">
+
+    <style>
+
+        /* =========================================
+           REGULAMIN
+        ========================================= */
+
+        .rules-header {
+            background: #071d3a;
+            color: white;
+
+            padding: 55px 0;
+
+            border-bottom: 6px solid #d4213d;
+        }
+
+        .rules-header h1 {
+            font-size: 48px;
+            line-height: 1.1;
+
+            margin-bottom: 15px;
+        }
+
+        .rules-header p {
+            max-width: 800px;
+
+            color: #dbe5ef;
+
+            font-size: 19px;
+        }
+
+
+        .rules-layout {
+            display: grid;
+
+            grid-template-columns:
+                260px 1fr;
+
+            gap: 50px;
+
+            padding: 55px 0;
+        }
+
+
+        /* =========================================
+           MENU
+        ========================================= */
+
+        .rules-menu {
+            align-self: start;
+
+            position: sticky;
+            top: 20px;
+
+            border: 1px solid #d9dde2;
+
+            background: #f5f6f7;
+        }
+
+        .rules-menu-title {
+            background: #071d3a;
+
+            color: white;
+
+            padding: 17px 20px;
+
+            font-weight: bold;
+
+            border-bottom: 5px solid #d4213d;
+        }
+
+        .rules-menu a {
+            display: block;
+
+            padding: 13px 18px;
+
+            color: #27313a;
+
+            text-decoration: none;
+
+            border-bottom: 1px solid #d9dde2;
+
+            font-size: 14px;
+        }
+
+        .rules-menu a:hover {
+            background: white;
+
+            color: #075a9e;
+        }
+
+
+        /* =========================================
+           CONTENT
+        ========================================= */
+
+        .rules-content h2 {
+            color: #071d3a;
+
+            font-size: 32px;
+
+            margin-bottom: 10px;
+        }
+
+        .rules-content h3 {
+            color: #071d3a;
+
+            font-size: 23px;
+
+            margin-top: 40px;
+
+            margin-bottom: 15px;
+
+            padding-bottom: 8px;
+
+            border-bottom: 1px solid #d9dde2;
+        }
+
+        .rules-content p {
+            color: #444c54;
+
+            line-height: 1.75;
+
+            margin-bottom: 15px;
+        }
+
+
+        /* =========================================
+           ARTYKUŁ
+        ========================================= */
+
+        .rule {
+            display: grid;
+
+            grid-template-columns: 50px 1fr;
+
+            gap: 15px;
+
+            margin-bottom: 12px;
+
+            padding: 17px;
+
+            background: #f5f6f7;
+
+            border-left: 4px solid #071d3a;
+        }
+
+        .rule-number {
+            color: #d4213d;
+
+            font-weight: bold;
+
+            font-size: 18px;
+        }
+
+        .rule strong {
+            color: #071d3a;
+        }
+
+
+        /* =========================================
+           WAŻNA INFORMACJA
+        ========================================= */
+
+        .important {
+            background: #fff4f5;
+
+            border-left: 6px solid #d4213d;
+
+            padding: 22px 25px;
+
+            margin: 25px 0;
+
+            color: #343a40;
+        }
+
+        .important-title {
+            color: #b71932;
+
+            font-weight: bold;
+
+            margin-bottom: 7px;
+        }
+
+
+        /* =========================================
+           KARY
+        ========================================= */
+
+        .penalty {
+            display: grid;
+
+            grid-template-columns: 70px 1fr;
+
+            gap: 20px;
+
+            align-items: center;
+
+            padding: 18px;
+
+            margin-bottom: 10px;
+
+            background: white;
+
+            border: 1px solid #d9dde2;
+        }
+
+        .penalty-number {
+            width: 50px;
+            height: 50px;
+
+            display: flex;
+
+            align-items: center;
+            justify-content: center;
+
+            background: #071d3a;
+
+            color: white;
+
+            font-size: 19px;
+
+            font-weight: bold;
+        }
+
+        .penalty strong {
+            color: #071d3a;
+
+            display: block;
+
+            margin-bottom: 3px;
+        }
+
+
+        /* =========================================
+           STOPKA REGULAMINU
+        ========================================= */
+
+        .rules-footer {
+            margin-top: 45px;
+
+            padding: 25px;
+
+            background: #071d3a;
+
+            color: #dbe5ef;
+
+            border-left: 6px solid #d4213d;
+        }
+
+        .rules-footer strong {
+            color: white;
+        }
+
+
+        /* =========================================
+           RESPONSIVE
+        ========================================= */
+
+        @media (max-width: 800px) {
+
+            .rules-layout {
+                grid-template-columns: 1fr;
+
+                gap: 30px;
+            }
+
+            .rules-menu {
+                position: static;
+            }
+
+            .rules-header h1 {
+                font-size: 38px;
+            }
+
+        }
+
+
+        @media (max-width: 500px) {
+
+            .rule {
+                grid-template-columns: 35px 1fr;
+
+                padding: 13px;
+
+                gap: 8px;
+            }
+
+            .penalty {
+                grid-template-columns: 55px 1fr;
+
+                gap: 12px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<!-- =========================================
+     HEADER
+========================================= -->
+
+<header class="top">
+
+    <div class="container top-content">
+
+        <div class="brand">
+
+            <div class="logo">
+                RP
+            </div>
+
+            <div>
+
+                <strong>
+                    Portal Administracji
+                </strong>
+
+                <span>
+                    PYMC.PL
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <button class="menu-button"
+                onclick="toggleMenu()">
+
+            ☰ MENU
+
+        </button>
+
+    </div>
+
+</header>
+
+
+<!-- =========================================
+     NAWIGACJA
+========================================= -->
+
+<nav id="navigation">
+
+    <div class="container nav-content">
+
+        <a href="index.html">
+            Home
+        </a>
+
+        <a href="zarzad.html">
+            Zarząd
+        </a>
+
+        <a href="palac-narodowy.html">
+            Pałac Narodowy
+        </a>
+
+        <a class="active"
+           href="regulamin.html">
+
+            Regulamin
+
+        </a>
+
+        <a href="departament.html">
+
+            Departament Bezpieczeństwa
+            i Cyfryzacji
+
+        </a>
+
+    </div>
+
+</nav>
+
+
+<!-- =========================================
+     NAGŁÓWEK
+========================================= -->
+
+<section class="rules-header">
+
+    <div class="container">
+
+        <div class="breadcrumbs">
+
+            Strona główna
+            →
+            Regulamin
+
+        </div>
+
+
+        <h1>
+            Regulamin PYMC.PL
+        </h1>
+
+
+        <p>
+
+            Zasady obowiązujące na serwerze Minecraft
+            oraz powiązanych kanałach komunikacyjnych
+            projektu PYMC.PL.
+
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================
+     TREŚĆ
+========================================= -->
+
+<main>
+
+<div class="container rules-layout">
+
+
+<!-- =========================================
+     MENU BOCZNE
+========================================= -->
+
+<aside class="rules-menu">
+
+    <div class="rules-menu-title">
+
+        Spis treści
+
+    </div>
+
+
+    <a href="#postanowienia">
+
+        1. Postanowienia ogólne
+
+    </a>
+
+
+    <a href="#kultura">
+
+        2. Zasady ogólne
+
+    </a>
+
+
+    <a href="#discord">
+
+        3. Zasady komunikacji
+
+    </a>
+
+
+    <a href="#administracja">
+
+        4. Zasady dla administracji
+
+    </a>
+
+
+    <a href="#gracze">
+
+        5. Zasady dla graczy
+
+    </a>
+
+
+    <a href="#multikonta">
+
+        6. Multikonta
+
+    </a>
+
+
+    <a href="#kary">
+
+        7. System kar
+
+    </a>
+
+
+    <a href="#akceptacja">
+
+        8. Akceptacja regulaminu
+
+    </a>
+
+</aside>
+
+
+<!-- =========================================
+     GŁÓWNA TREŚĆ
+========================================= -->
+
+<section class="rules-content">
+
+
+<h2 id="postanowienia">
+
+    Regulamin PYMC.PL
+
+</h2>
+
+
+<p>
+
+    Niniejszy regulamin określa zasady korzystania
+    z serwera Minecraft oraz powiązanych z nim
+    kanałów komunikacyjnych projektu PYMC.PL.
+
+</p>
+
+
+<div class="important">
+
+    <div class="important-title">
+
+        ⚠ WAŻNE
+
+    </div>
+
+
+    Regulamin jest własnością projektu PYMC.PL.
+
+    Zabrania się kopiowania, publikowania lub
+    przedstawiania niniejszego regulaminu jako
+    własności innego serwera bez zgody Zarządu PYMC.PL.
+
+</div>
+
+
+
+<!-- =========================================
+     ZASADY OGÓLNE
+========================================= -->
+
+<h3 id="kultura">
+
+    2. Zasady ogólne
+
+</h3>
+
+
+<div class="rule">
+
+    <div class="rule-number">
+        01
+    </div>
+
+    <div>
+
+        <strong>Kultura osobista</strong>
+
+        <br>
+
+        Dbaj o kulturę wypowiedzi i unikaj
+        nadmiernego używania wulgaryzmów.
+
+    </div>
+
+</div>
+
+
+<div class="rule">
+
+    <div class="rule-number">
+        02
+    </div>
+
+    <div>
+
+        <strong>Zakaz toksyczności</strong>
+
+        <br>
+
+        Zabrania się nękania, prześladowania,
+        obrażania oraz kierowania gróźb wobec
+        innych użytkowników.
+
+    </div>
+
+</div>
+
+
+<div class="rule">
+
+    <div class="rule-number">
+        03
+    </div>
+
+    <div>
+
+        <strong>Tolerancja</strong>
+
+        <br>
+
+        Zabrania się dyskryminacji ze względu
+        na rasę, narodowość, religię, płeć
+        lub inne cechy osobiste.
+
+    </div>
+
+</div>
+
+
+<div class="rule">
+
+    <div class="rule-number">
+        04
+    </div>
+
+    <div>
+
+        <strong>Spam</strong>
+
+        <br>
+
+        Zabrania się floodowania, spamowania
+        emotikonami oraz nadmiernego używania
+        Caps Locka.
+
+    </div>
+
+</div>
+
+
+<div class="rule">
+
+    <div class="rule-number">
+        05
+    </div>
+
+    <div>
+
+        <strong>Tematyczność kanałów</strong>
+
+        <br>
+
+        Wiadomości należy kierować na kanały
+        przeznaczone do odpowiedniej tematyki.
+
+    </div>
+
+</div>
+
+
+<div class="rule">
+
+    <div class="rule-number">
+        06
+    </div>
+
+    <div>
+
+        <strong>Reklama</strong>
+
+        <br>
+
+        Zabrania się reklamowania innych serwerów,
+        stron internetowych oraz kanałów bez zgody
+        administracji.
+
+    </div>
+
+</div>
+
+
+<div class="rule">
+
+    <div class="rule-number">
+        07
+    </div>
+
+    <div>
+
+        <strong>Oznaczanie administracji</strong>
+
+        <br>
+
+        Zabrania się oznaczania administracji
+        bez ważnego i uzasadnionego powodu.
+
+    </div>
+
+</div>
+
+
+
+<!-- =========================================
+     DISCORD
+========================================= -->
+
+<h3 id="discord">
+
+    3. Zasady komunikacji
+
+</h3>
+
+
+<div class="rule">
+
+    <div class="rule-number">
+        01
+    </div>
+
+    <div>
+
+        <strong>Kanały głosowe</strong>
+
+        <br>
+
+        Zabrania się krzyczenia, puszczania muzyki
+        przez mikrofon oraz celowego przesterowywania
+        dźwięku.
+
+    </div>
+
+</div>
+
+
+<div class="rule">
+
+    <div class="rule-number">
+        02
+    </div>
+
+    <div>
+
+        <strong>Przeszkadzanie</strong>
+
+        <br>
+
+        Zabrania się ciągłego przemieszczania
+        pomiędzy kanałami głosowymi w celu
+        irytowania lub przeszkadzania innym.
+
+    </div>
+
+</div>
+
+
+<div class="rule">
+
+    <div class="rule-number">
+        03
+    </div>
+
+    <div>
+
+        <strong>Nazwy i awatary</strong>
+
+        <br>
+
+        Nick, status oraz zdjęcie profilowe nie mogą
+        zawierać treści wulgarnych, obraźliwych
+        lub naruszających zasady projektu.
+
+    </div>
+
+</div>
+
+
+<div class="rule">
+
+    <div class="rule-number">
+        04
+    </div>
+
+    <div>
+
+        <strong>Podszywanie się</strong>
+
+        <br>
+
+        Zabrania się podszywania pod administrację,
+        twórców, YouTuberów oraz innych graczy.
+
+    </div>
+
+</div>
+
+
+
+<!-- =========================================
+     ADMINISTRACJA
+========================================= -->
+
+<h3 id="administracja">
+
+    4. Zasady dla administracji
+
+</h3>
+
+
+<div class="important">
+
+    <div class="important-title">
+
+        Zasady obowiązujące członków administracji
+
+    </div>
+
+    Członkowie administracji zobowiązani są
+    do bezstronnego wykonywania swoich obowiązków
+    oraz przestrzegania zasad projektu.
+
+</div>
+
+
+<div class="rule">
+
+    <div class="rule-number">
+        01
+    </div>
+
+    <div>
+
+        <strong>Wydawanie przedmiotów</strong>
+
+        <br>
+
+        Zabrania się wydawania graczom przedmiotów,
+        które mogłyby prowadzić do nierównego
+        traktowania użytkowników.
+
+    </div>
+
+</div>
+
+
+<div class="rule">
+
+    <div class="rule-number">
+        02
+    </div>
+
+    <div>
+
+        <strong>Key All</strong>
+
+        <br>
+
+        Zabrania się nadmiernego lub nieuzasadnionego
+        wykonywania operacji typu Key All.
+
+    </div>
+
+</div>
+
+
+<div class="rule">
+
+    <div class="rule-number">
+        03
+    </div>
+
+    <div>
+
+        <strong>Gamemode Creative</strong>
+
+        <br>
+
+        Zabrania się wykorzystywania uprawnień
+        Creative do faworyzowania kolegów,
+        znajomych lub członków rodziny.
+
+    </div>
+
+</div>
+
+
+
+<!-- =========================================
+     GRACZE
+========================================= -->
+
+<h3 id="gracze">
+
+    5. Zasady dla graczy
+
+</h3>
+
+
+<div class="rule">
+
+    <div class="rule-number">
+        01
+    </div>
+
+    <div>
+
+        <strong>Prośby o rangę</strong>
+
+        <br>
+
+        Zabrania się proszenia administracji
+        o nadanie rangi administracyjnej.
+
+    </div>
+
+</div>
+
+
+<div class="rule">
+
+    <div class="rule-number">
+        02
+    </div>
+
+    <div>
+
+        <strong>Spamowanie administracji</strong>
+
+        <br>
+
+        Zabrania się ciągłego oznaczania
+        CEO, O.ADMIN, ADMINA lub innych członków
+        administracji.
+
+    </div>
+
+</div>
+
+
+<div class="rule">
+
+    <div class="rule-number">
+        03
+    </div>
+
+    <div>
+
+        <strong>Prośby o przywileje</strong>
+
+        <br>
+
+        Zabrania się proszenia administracji
+        o darmowy Gamemode, przedmioty lub inne
+        przywileje.
+
+    </div>
+
+</div>
+
+
+
+<!-- =========================================
+     MULTIKONTA
+========================================= -->
+
+<h3 id="multikonta">
+
+    6. Multikonta
+
+</h3>
+
+
+<div class="important">
+
+    <div class="important-title">
+
+        ⚠ ZAKAZ MULTIKONT
+
+    </div>
+
+    Na PYMC.PL obowiązuje zakaz posiadania
+    i korzystania z multikont na serwerze.
+
+    Naruszenie tej zasady może skutkować
+    permanentną blokadą bez możliwości odwołania.
+
+    W przypadku wielokrotnych naruszeń administracja
+    może zastosować blokadę IP.
+
+</div>
+
+
+
+<!-- =========================================
+     BŁĘDY
+========================================= -->
+
+<h3>
+
+    7. Błędy i wykorzystywanie bugów
+
+</h3>
+
+
+<div class="rule">
+
+    <div class="rule-number">
+        01
+    </div>
+
+    <div>
+
+        <strong>Zgłaszanie błędów</strong>
+
+        <br>
+
+        Wszelkie błędy i nieprawidłowości
+        w działaniu serwera należy zgłaszać
+        administracji.
+
+    </div>
+
+</div>
+
+
+<div class="rule">
+
+    <div class="rule-number">
+        02
+    </div>
+
+    <div>
+
+        <strong>Wykorzystywanie błędów</strong>
+
+        <br>
+
+        Wykorzystywanie bugów w celu uzyskania
+        korzyści jest zabronione i może skutkować
+        blokadą konta.
+
+    </div>
+
+</div>
+
+
+
+<!-- =========================================
+     DECYZJE ADMINISTRACJI
+========================================= -->
+
+<h3>
+
+    8. Decyzje administracji
+
+</h3>
+
+
+<div class="important">
+
+    <div class="important-title">
+
+        Decyzje administracji
+
+    </div>
+
+    Decyzja administratora lub moderatora
+    w sprawie bieżącego naruszenia zasad
+    jest wiążąca.
+
+</div>
+
+
+
+<!-- =========================================
+     SYSTEM KAR
+========================================= -->
+
+<h3 id="kary">
+
+    9. System kar
+
+</h3>
+
+
+<p>
+
+    W przypadku wielokrotnego naruszania regulaminu
+    administracja może stosować następujący schemat
+    kar.
+
+</p>
+
+
+<div class="penalty">
+
+    <div class="penalty-number">
+        1
+    </div>
+
+    <div>
+
+        <strong>
+            Ostrzeżenie
+        </strong>
+
+        Pierwsze naruszenie regulaminu.
+
+    </div>
+
+</div>
+
+
+<div class="penalty">
+
+    <div class="penalty-number">
+        2
+    </div>
+
+    <div>
+
+        <strong>
+            Ostrzeżenie
+        </strong>
+
+        Drugie naruszenie regulaminu.
+
+    </div>
+
+</div>
+
+
+<div class="penalty">
+
+    <div class="penalty-number">
+        3
+    </div>
+
+    <div>
+
+        <strong>
+            Wyciszenie
+        </strong>
+
+        Trzecie naruszenie.
+
+        W przypadku naruszeń dotyczących
+        czatu Minecraft lub Discorda może zostać
+        zastosowane wyciszenie.
+
+    </div>
+
+</div>
+
+
+<div class="penalty">
+
+    <div class="penalty-number">
+        4
+    </div>
+
+    <div>
+
+        <strong>
+            TempBan — 24 godziny
+        </strong>
+
+        Czwarte naruszenie regulaminu.
+
+    </div>
+
+</div>
+
+
+<div class="important">
+
+    <div class="important-title">
+
+        Ważne
+
+    </div>
+
+    W przypadku szczególnie poważnych naruszeń
+    administracja może zastosować karę
+    adekwatną do sytuacji, niezależnie od
+    kolejności przedstawionej powyżej.
+
+</div>
+
+
+
+<!-- =========================================
+     AKCEPTACJA
+========================================= -->
+
+<h3 id="akceptacja">
+
+    10. Akceptacja regulaminu
+
+</h3>
+
+
+<div class="rule">
+
+    <div class="rule-number">
+        01
+    </div>
+
+    <div>
+
+        <strong>
+            Znajomość regulaminu
+        </strong>
+
+        <br>
+
+        Nieznajomość regulaminu nie zwalnia
+        z obowiązku jego przestrzegania.
+
+    </div>
+
+</div>
+
+
+<div class="rule">
+
+    <div class="rule-number">
+        02
+    </div>
+
+    <div>
+
+        <strong>
+            Wejście na serwer
+        </strong>
+
+        <br>
+
+        Wejście na serwer oraz korzystanie
+        z jego usług oznacza akceptację
+        obowiązujących zasad.
+
+    </div>
+
+</div>
+
+
+
+<!-- =========================================
+     INFORMACJA O AKTUALIZACJI
+========================================= -->
+
+<div class="rules-footer">
+
+    <strong>
+        Ostatnia aktualizacja regulaminu:
+    </strong>
+
+    <br><br>
+
+    14 sierpnia 2026 r.
+
+    <br><br>
+
+    Regulamin obejmuje serwer Minecraft
+    oraz powiązane kanały komunikacyjne
+    projektu PYMC.PL.
+
+    <br><br>
+
+    <strong>
+        © PYMC.PL
+    </strong>
+
+</div>
+
+
+</section>
+
+</div>
+
+</main>
+
+
+
+<!-- =========================================
+     FOOTER
+========================================= -->
+
+<footer>
+
+    <div class="container footer-grid">
+
+        <div>
+
+            <strong>
+                Portal Administracji
+            </strong>
+
+            <p>
+                Oficjalny portal informacyjny
+                projektu PYMC.PL.
+            </p>
+
+        </div>
+
+
+        <div>
+
+            <strong>
+                Na skróty
+            </strong>
+
+            <a href="index.html">
+                Home
+            </a>
+
+            <a href="zarzad.html">
+                Zarząd
+            </a>
+
+            <a href="regulamin.html">
+                Regulamin
+            </a>
+
+        </div>
+
+
+        <div>
+
+            <strong>
+                Kontakt
+            </strong>
+
+            <p>
+                Discord: discord.gg/twojserwer
+            </p>
+
+            <p>
+                IP: play.twojserwer.pl
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <div class="copyright">
+
+        © 2026 PYMC.PL
+
+    </div>
+
+</footer>
+
+
+
+<script>
+
+function toggleMenu() {
+
+    const navigation =
+        document.getElementById("navigation");
+
+    navigation.classList.toggle("open");
+
+}
+
+</script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,1656 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Pałac Narodowy — PYMC.PL</title>
+
+    <link rel="icon"
+      href="logopymc.png"
+      type="image/png">
+
+    <link rel="stylesheet"
+          href="style.css">
+
+
+    <style>
+
+        /* =====================================================
+           PAŁAC NARODOWY
+        ===================================================== */
+
+        .palace-hero {
+
+            position: relative;
+
+            min-height: 520px;
+
+            display: flex;
+
+            align-items: flex-end;
+
+            background:
+                linear-gradient(
+                    to bottom,
+                    rgba(7,29,58,.15),
+                    rgba(7,29,58,.92)
+                ),
+                linear-gradient(
+                    135deg,
+                    #31516f,
+                    #071d3a 65%,
+                    #030c18
+                );
+
+            color: white;
+
+            border-bottom: 7px solid #d4213d;
+
+        }
+
+
+        .palace-hero-content {
+
+            padding: 80px 0 65px;
+
+            max-width: 900px;
+
+        }
+
+
+        .palace-label {
+
+            display: inline-block;
+
+            padding: 7px 12px;
+
+            margin-bottom: 18px;
+
+            background: #d4213d;
+
+            color: white;
+
+            font-size: 12px;
+
+            font-weight: bold;
+
+            letter-spacing: 1px;
+
+            text-transform: uppercase;
+
+        }
+
+
+        .palace-hero h1 {
+
+            font-size: clamp(42px, 6vw, 70px);
+
+            line-height: 1.05;
+
+            margin-bottom: 20px;
+
+        }
+
+
+        .palace-hero p {
+
+            max-width: 800px;
+
+            color: #dce7f1;
+
+            font-size: 20px;
+
+            line-height: 1.7;
+
+        }
+
+
+        /* =====================================================
+           INFORMACJE O PAŁACU
+        ===================================================== */
+
+        .palace-intro {
+
+            padding: 65px 0;
+
+            background: white;
+
+        }
+
+
+        .palace-intro-grid {
+
+            display: grid;
+
+            grid-template-columns:
+                1.5fr 1fr;
+
+            gap: 55px;
+
+            align-items: start;
+
+        }
+
+
+        .palace-intro h2 {
+
+            color: #071d3a;
+
+            font-size: 36px;
+
+            margin-bottom: 15px;
+
+        }
+
+
+        .palace-intro p {
+
+            color: #4e5862;
+
+            font-size: 17px;
+
+            line-height: 1.8;
+
+            margin-bottom: 17px;
+
+        }
+
+
+        .palace-fact-box {
+
+            border: 1px solid #d9dde2;
+
+            background: #f5f6f7;
+
+        }
+
+
+        .fact-title {
+
+            padding: 18px 22px;
+
+            background: #071d3a;
+
+            color: white;
+
+            font-weight: bold;
+
+            border-bottom: 5px solid #d4213d;
+
+        }
+
+
+        .fact {
+
+            display: flex;
+
+            justify-content: space-between;
+
+            gap: 20px;
+
+            padding: 15px 22px;
+
+            border-bottom: 1px solid #d9dde2;
+
+        }
+
+
+        .fact:last-child {
+
+            border-bottom: none;
+
+        }
+
+
+        .fact span:first-child {
+
+            color: #68727c;
+
+        }
+
+
+        .fact strong {
+
+            color: #071d3a;
+
+            text-align: right;
+
+        }
+
+
+        /* =====================================================
+           FUNKCJE PAŁACU
+        ===================================================== */
+
+        .palace-functions {
+
+            padding: 65px 0;
+
+            background: #f5f6f7;
+
+        }
+
+
+        .section-heading {
+
+            margin-bottom: 35px;
+
+        }
+
+
+        .section-heading h2 {
+
+            color: #071d3a;
+
+            font-size: 36px;
+
+            margin-bottom: 8px;
+
+        }
+
+
+        .section-heading p {
+
+            color: #626c75;
+
+            max-width: 750px;
+
+        }
+
+
+        .red-line {
+
+            width: 60px;
+
+            height: 5px;
+
+            background: #d4213d;
+
+            margin-top: 15px;
+
+        }
+
+
+        .function-grid {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            gap: 20px;
+
+        }
+
+
+        .function-card {
+
+            background: white;
+
+            border: 1px solid #d9dde2;
+
+            padding: 28px;
+
+            border-top: 5px solid #071d3a;
+
+            transition: .2s;
+
+        }
+
+
+        .function-card:hover {
+
+            transform: translateY(-5px);
+
+            border-top-color: #d4213d;
+
+            box-shadow:
+                0 10px 30px
+                rgba(0,0,0,.08);
+
+        }
+
+
+        .function-number {
+
+            color: #d4213d;
+
+            font-weight: bold;
+
+            font-size: 14px;
+
+        }
+
+
+        .function-card h3 {
+
+            color: #071d3a;
+
+            font-size: 21px;
+
+            margin: 8px 0 10px;
+
+        }
+
+
+        .function-card p {
+
+            color: #606a74;
+
+            line-height: 1.65;
+
+        }
+
+
+        /* =====================================================
+           AKTUALNOŚCI
+        ===================================================== */
+
+        .palace-news {
+
+            padding: 70px 0;
+
+            background: white;
+
+        }
+
+
+        .news-layout {
+
+            display: grid;
+
+            grid-template-columns:
+                1.6fr 1fr;
+
+            gap: 35px;
+
+        }
+
+
+        .featured-news {
+
+            border: 1px solid #d9dde2;
+
+            background: white;
+
+        }
+
+
+        .featured-image {
+
+            height: 260px;
+
+            background:
+
+                linear-gradient(
+                    135deg,
+                    #183b5b,
+                    #071d3a
+                );
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            color: white;
+
+            font-size: 42px;
+
+            font-weight: bold;
+
+            letter-spacing: 4px;
+
+        }
+
+
+        .featured-content {
+
+            padding: 28px;
+
+        }
+
+
+        .news-date {
+
+            color: #707982;
+
+            font-size: 13px;
+
+            font-weight: bold;
+
+        }
+
+
+        .featured-content h3 {
+
+            color: #071d3a;
+
+            font-size: 28px;
+
+            line-height: 1.25;
+
+            margin: 10px 0;
+
+        }
+
+
+        .featured-content p {
+
+            color: #555f68;
+
+            line-height: 1.7;
+
+        }
+
+
+        .read-more {
+
+            display: inline-block;
+
+            margin-top: 18px;
+
+            color: #075a9e;
+
+            font-weight: bold;
+
+            text-decoration: none;
+
+        }
+
+
+        .read-more:hover {
+
+            text-decoration: underline;
+
+        }
+
+
+        /* =====================================================
+           LISTA NEWSÓW
+        ===================================================== */
+
+        .news-list {
+
+            border-top: 1px solid #d9dde2;
+
+        }
+
+
+        .news-item {
+
+            display: block;
+
+            padding: 20px;
+
+            border-bottom: 1px solid #d9dde2;
+
+            text-decoration: none;
+
+            transition: .15s;
+
+        }
+
+
+        .news-item:hover {
+
+            background: #f5f6f7;
+
+        }
+
+
+        .news-item .news-date {
+
+            display: block;
+
+            margin-bottom: 6px;
+
+        }
+
+
+        .news-item h3 {
+
+            color: #071d3a;
+
+            font-size: 18px;
+
+            line-height: 1.35;
+
+        }
+
+
+        /* =====================================================
+           SALONY
+        ===================================================== */
+
+        .palace-rooms {
+
+            padding: 65px 0;
+
+            background: #f5f6f7;
+
+        }
+
+
+        .rooms-grid {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(2, 1fr);
+
+            gap: 18px;
+
+        }
+
+
+        .room {
+
+            background: white;
+
+            border: 1px solid #d9dde2;
+
+            padding: 24px;
+
+            display: grid;
+
+            grid-template-columns: 55px 1fr;
+
+            gap: 18px;
+
+        }
+
+
+        .room-icon {
+
+            width: 50px;
+
+            height: 50px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            background: #071d3a;
+
+            color: white;
+
+            font-weight: bold;
+
+        }
+
+
+        .room h3 {
+
+            color: #071d3a;
+
+            margin-bottom: 5px;
+
+        }
+
+
+        .room p {
+
+            color: #626c75;
+
+            line-height: 1.6;
+
+        }
+
+
+        /* =====================================================
+           OSTATNIE WYDARZENIE
+        ===================================================== */
+
+        .official-message {
+
+            margin-top: 35px;
+
+            padding: 30px;
+
+            background: #071d3a;
+
+            color: white;
+
+            border-left: 7px solid #d4213d;
+
+        }
+
+
+        .official-message .message-label {
+
+            color: #dce7f1;
+
+            font-size: 12px;
+
+            font-weight: bold;
+
+            letter-spacing: 1px;
+
+            text-transform: uppercase;
+
+            margin-bottom: 10px;
+
+        }
+
+
+        .official-message h3 {
+
+            font-size: 25px;
+
+            margin-bottom: 10px;
+
+        }
+
+
+        .official-message p {
+
+            color: #d6e1eb;
+
+            line-height: 1.7;
+
+        }
+
+
+        /* =====================================================
+           RESPONSIVE
+        ===================================================== */
+
+        @media (max-width: 850px) {
+
+            .palace-intro-grid,
+            .news-layout {
+
+                grid-template-columns: 1fr;
+
+            }
+
+
+            .function-grid {
+
+                grid-template-columns:
+                    repeat(2, 1fr);
+
+            }
+
+        }
+
+
+        @media (max-width: 600px) {
+
+            .palace-hero {
+
+                min-height: 430px;
+
+            }
+
+
+            .palace-hero-content {
+
+                padding: 60px 0 45px;
+
+            }
+
+
+            .function-grid,
+            .rooms-grid {
+
+                grid-template-columns: 1fr;
+
+            }
+
+
+            .fact {
+
+                flex-direction: column;
+
+                gap: 4px;
+
+            }
+
+
+            .fact strong {
+
+                text-align: left;
+
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     HEADER
+===================================================== -->
+
+<header class="top">
+
+    <div class="container top-content">
+
+        <div class="brand">
+
+            <div class="logo">
+                RP
+            </div>
+
+            <div>
+
+                <strong>
+                    Portal Administracji
+                </strong>
+
+                <span>
+                    PYMC.PL
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <button class="menu-button"
+                onclick="toggleMenu()">
+
+            ☰ MENU
+
+        </button>
+
+    </div>
+
+</header>
+
+
+<!-- =====================================================
+     NAVIGACJA
+===================================================== -->
+
+<nav id="navigation">
+
+    <div class="container nav-content">
+
+        <a href="index.html">
+            Home
+        </a>
+
+        <a href="zarzad.html">
+            Zarząd
+        </a>
+
+        <a class="active"
+           href="palac-narodowy.html">
+
+            Pałac Narodowy
+
+        </a>
+
+        <a href="regulamin.html">
+            Regulamin
+        </a>
+
+        <a href="departament.html">
+
+            Departament Bezpieczeństwa
+            i Cyfryzacji
+
+        </a>
+
+    </div>
+
+</nav>
+
+
+<!-- =====================================================
+     HERO
+===================================================== -->
+
+<section class="palace-hero">
+
+    <div class="container">
+
+        <div class="palace-hero-content">
+
+            <span class="palace-label">
+
+                Oficjalna rezydencja CEO
+
+            </span>
+
+
+            <h1>
+                Pałac Narodowy
+            </h1>
+
+
+            <p>
+
+                Oficjalna rezydencja CEO PYMC.PL,
+                miejsce spotkań administracji,
+                posiedzeń oraz najważniejszych
+                wydarzeń związanych z funkcjonowaniem
+                projektu.
+
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     INFORMACJE
+===================================================== -->
+
+<section class="palace-intro">
+
+    <div class="container">
+
+        <div class="palace-intro-grid">
+
+
+            <div>
+
+                <h2>
+                    O Pałacu Narodowym
+                </h2>
+
+                <div class="red-line"></div>
+
+
+                <p>
+
+                    Pałac Narodowy jest oficjalną
+                    rezydencją CEO PYMC.PL — macfud.
+                    Jest to jedno z najważniejszych
+                    miejsc administracyjnych projektu.
+
+                </p>
+
+
+                <p>
+
+                    Obiekt pełni jednocześnie funkcję
+                    miejsca pracy, spotkań oraz
+                    reprezentacyjnej przestrzeni
+                    administracji serwera Minecraft.
+
+                </p>
+
+
+                <p>
+
+                    W Pałacu odbywają się posiedzenia
+                    administracji, spotkania robocze,
+                    rozmowy dotyczące rozwoju serwera,
+                    oficjalne kolacje oraz inne wydarzenia
+                    związane z życiem projektu.
+
+                </p>
+
+
+                <p>
+
+                    Pałac jest również miejscem,
+                    w którym mogą odbywać się
+                    postępowania administracyjne
+                    dotyczące naruszeń regulaminu
+                    serwera Minecraft.
+
+                </p>
+
+
+            </div>
+
+
+            <aside class="palace-fact-box">
+
+                <div class="fact-title">
+
+                    Informacje o Pałacu
+
+                </div>
+
+
+                <div class="fact">
+
+                    <span>
+                        Status
+                    </span>
+
+                    <strong>
+                        Oficjalna rezydencja
+                    </strong>
+
+                </div>
+
+
+                <div class="fact">
+
+                    <span>
+                        Gospodarz
+                    </span>
+
+                    <strong>
+                        CEO — macfud
+                    </strong>
+
+                </div>
+
+
+                <div class="fact">
+
+                    <span>
+                        Projekt
+                    </span>
+
+                    <strong>
+                        PYMC.PL
+                    </strong>
+
+                </div>
+
+
+                <div class="fact">
+
+                    <span>
+                        Funkcja
+                    </span>
+
+                    <strong>
+                        Rezydencja i miejsce spotkań
+                    </strong>
+
+                </div>
+
+
+                <div class="fact">
+
+                    <span>
+                        Charakter
+                    </span>
+
+                    <strong>
+                        Administracyjny
+                    </strong>
+
+                </div>
+
+            </aside>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     FUNKCJE
+===================================================== -->
+
+<section class="palace-functions">
+
+    <div class="container">
+
+
+        <div class="section-heading">
+
+            <h2>
+                Funkcje Pałacu
+            </h2>
+
+            <p>
+
+                Pałac Narodowy pełni wiele funkcji
+                związanych z działalnością administracji
+                PYMC.PL.
+
+            </p>
+
+            <div class="red-line"></div>
+
+        </div>
+
+
+        <div class="function-grid">
+
+
+            <div class="function-card">
+
+                <span class="function-number">
+                    01
+                </span>
+
+                <h3>
+                    Rezydencja CEO
+                </h3>
+
+                <p>
+
+                    Oficjalny dom i rezydencja
+                    CEO projektu — macfud.
+
+                </p>
+
+            </div>
+
+
+            <div class="function-card">
+
+                <span class="function-number">
+                    02
+                </span>
+
+                <h3>
+                    Posiedzenia administracji
+                </h3>
+
+                <p>
+
+                    Miejsce przeprowadzania
+                    posiedzeń oraz narad
+                    administracji serwera.
+
+                </p>
+
+            </div>
+
+
+            <div class="function-card">
+
+                <span class="function-number">
+                    03
+                </span>
+
+                <h3>
+                    Spotkania
+                </h3>
+
+                <p>
+
+                    W Pałacu odbywają się
+                    oficjalne i robocze spotkania
+                    członków administracji.
+
+                </p>
+
+            </div>
+
+
+            <div class="function-card">
+
+                <span class="function-number">
+                    04
+                </span>
+
+                <h3>
+                    Oficjalne kolacje
+                </h3>
+
+                <p>
+
+                    Reprezentacyjne kolacje
+                    i spotkania organizowane
+                    przez CEO oraz administrację.
+
+                </p>
+
+            </div>
+
+
+            <div class="function-card">
+
+                <span class="function-number">
+                    05
+                </span>
+
+                <h3>
+                    Postępowania administracyjne
+                </h3>
+
+                <p>
+
+                    Miejsce prowadzenia postępowań
+                    dotyczących naruszeń zasad
+                    serwera Minecraft.
+
+                </p>
+
+            </div>
+
+
+            <div class="function-card">
+
+                <span class="function-number">
+                    06
+                </span>
+
+                <h3>
+                    Centrum decyzji
+                </h3>
+
+                <p>
+
+                    Przestrzeń przeznaczona do
+                    podejmowania najważniejszych
+                    decyzji dotyczących projektu.
+
+                </p>
+
+            </div>
+
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     AKTUALNOŚCI
+===================================================== -->
+
+<section class="palace-news">
+
+    <div class="container">
+
+
+        <div class="section-heading">
+
+            <h2>
+                Aktualności z Pałacu
+            </h2>
+
+            <p>
+
+                Najnowsze informacje dotyczące
+                spotkań, posiedzeń i wydarzeń
+                odbywających się w Pałacu Narodowym.
+
+            </p>
+
+            <div class="red-line"></div>
+
+        </div>
+
+
+        <div class="news-layout">
+
+
+            <!-- GŁÓWNY NEWS -->
+
+            <article class="featured-news">
+
+                <div class="featured-image">
+
+                    PAŁAC
+
+                </div>
+
+
+                <div class="featured-content">
+
+                    <span class="news-date">
+
+                        19 sierpnia 2026
+
+                    </span>
+
+
+                    <h3>
+
+                        Posiedzenie administracji
+                        w Pałacu Narodowym
+
+                    </h3>
+
+
+                    <p>
+
+                        W Pałacu Narodowym odbyło się
+                        kolejne posiedzenie administracji
+                        projektu PYMC.PL. Podczas spotkania
+                        omówiono bieżące funkcjonowanie
+                        serwera oraz dalszy rozwój projektu.
+
+                    </p>
+
+
+                    <a href="#"
+                       class="read-more">
+
+                        Czytaj więcej →
+
+                    </a>
+
+                </div>
+
+            </article>
+
+
+            <!-- LISTA -->
+
+            <div class="news-list">
+
+
+                <a href="#"
+                   class="news-item">
+
+                    <span class="news-date">
+
+                        17 sierpnia 2026
+
+                    </span>
+
+                    <h3>
+
+                        Spotkanie CEO z administracją
+                        projektu
+
+                    </h3>
+
+                </a>
+
+
+                <a href="#"
+                   class="news-item">
+
+                    <span class="news-date">
+
+                        15 sierpnia 2026
+
+                    </span>
+
+                    <h3>
+
+                        Narada dotycząca bezpieczeństwa
+                        serwera
+
+                    </h3>
+
+                </a>
+
+
+                <a href="#"
+                   class="news-item">
+
+                    <span class="news-date">
+
+                        14 sierpnia 2026
+
+                    </span>
+
+                    <h3>
+
+                        Posiedzenie w sprawie zmian
+                        w regulaminie
+
+                    </h3>
+
+                </a>
+
+
+                <a href="#"
+                   class="news-item">
+
+                    <span class="news-date">
+
+                        12 sierpnia 2026
+
+                    </span>
+
+                    <h3>
+
+                        Spotkanie organizacyjne
+                        administracji
+
+                    </h3>
+
+                </a>
+
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     POMIESZCZENIA
+===================================================== -->
+
+<section class="palace-rooms">
+
+    <div class="container">
+
+
+        <div class="section-heading">
+
+            <h2>
+                Pomieszczenia Pałacu
+            </h2>
+
+            <p>
+
+                Wybrane pomieszczenia wykorzystywane
+                podczas działalności administracyjnej.
+
+            </p>
+
+            <div class="red-line"></div>
+
+        </div>
+
+
+        <div class="rooms-grid">
+
+
+            <div class="room">
+
+                <div class="room-icon">
+                    01
+                </div>
+
+                <div>
+
+                    <h3>
+                        Sala Posiedzeń
+                    </h3>
+
+                    <p>
+
+                        Główne miejsce posiedzeń
+                        administracji oraz narad
+                        dotyczących projektu.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="room">
+
+                <div class="room-icon">
+                    02
+                </div>
+
+                <div>
+
+                    <h3>
+                        Gabinet CEO
+                    </h3>
+
+                    <p>
+
+                        Prywatny gabinet CEO
+                        przeznaczony do pracy,
+                        spotkań i podejmowania decyzji.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="room">
+
+                <div class="room-icon">
+                    03
+                </div>
+
+                <div>
+
+                    <h3>
+                        Sala Reprezentacyjna
+                    </h3>
+
+                    <p>
+
+                        Przestrzeń przeznaczona
+                        na oficjalne spotkania
+                        i wydarzenia administracyjne.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="room">
+
+                <div class="room-icon">
+                    04
+                </div>
+
+                <div>
+
+                    <h3>
+                        Jadalnia
+                    </h3>
+
+                    <p>
+
+                        Miejsce organizacji kolacji
+                        i nieformalnych spotkań
+                        członków administracji.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="room">
+
+                <div class="room-icon">
+                    05
+                </div>
+
+                <div>
+
+                    <h3>
+                        Sala Postępowań
+                    </h3>
+
+                    <p>
+
+                        Miejsce przeprowadzania
+                        postępowań administracyjnych
+                        dotyczących graczy serwera.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="room">
+
+                <div class="room-icon">
+                    06
+                </div>
+
+                <div>
+
+                    <h3>
+                        Sala Narad
+                    </h3>
+
+                    <p>
+
+                        Pomieszczenie przeznaczone
+                        do mniejszych spotkań
+                        i konsultacji administracji.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+
+        <!-- OFICJALNY KOMUNIKAT -->
+
+        <div class="official-message">
+
+            <div class="message-label">
+
+                Komunikat Pałacu Narodowego
+
+            </div>
+
+
+            <h3>
+
+                Pałac pozostaje miejscem
+                działalności administracji PYMC.PL
+
+            </h3>
+
+
+            <p>
+
+                Wszystkie posiedzenia, spotkania
+                i wydarzenia organizowane w Pałacu
+                Narodowym odbywają się w ramach
+                funkcjonowania fikcyjnego świata
+                serwera Minecraft PYMC.PL.
+
+            </p>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer>
+
+    <div class="container footer-grid">
+
+
+        <div>
+
+            <strong>
+                Portal Administracji
+            </strong>
+
+            <p>
+
+                Oficjalny portal informacyjny
+                projektu PYMC.PL.
+
+            </p>
+
+        </div>
+
+
+        <div>
+
+            <strong>
+                Na skróty
+            </strong>
+
+            <a href="index.html">
+                Home
+            </a>
+
+            <a href="zarzad.html">
+                Zarząd
+            </a>
+
+            <a href="regulamin.html">
+                Regulamin
+            </a>
+
+            <a href="palac-narodowy.html">
+                Pałac Narodowy
+            </a>
+
+        </div>
+
+
+        <div>
+
+            <strong>
+                Kontakt
+            </strong>
+
+            <p>
+                Discord: discord.gg/twojserwer
+            </p>
+
+            <p>
+                IP: play.twojserwer.pl
+            </p>
+
+        </div>
+
+
+    </div>
+
+
+    <div class="copyright">
+
+        © 2026 PYMC.PL
+        — Pałac Narodowy
+
+    </div>
+
+</footer>
+
+
+<script>
+
+function toggleMenu() {
+
+    const navigation =
+        document.getElementById("navigation");
+
+    navigation.classList.toggle("open");
+
+}
+
+</script>
+
+
+</body>
+
+</html>

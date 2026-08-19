@@ -1,0 +1,1065 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Zarząd — Portal Administracji</title>
+
+    <link rel="icon" href="logopymc.png" type="image/png">
+    <link rel="stylesheet" href="style.css">
+
+        /* ================================
+           ZARZĄD
+        ================================= */
+
+        .government-header {
+            background: #071d3a;
+            color: white;
+            padding: 55px 0;
+            border-bottom: 6px solid #d4213d;
+        }
+
+        .government-header h1 {
+            font-size: 48px;
+            line-height: 1.1;
+            margin-bottom: 15px;
+        }
+
+        .government-header p {
+            max-width: 750px;
+            color: #dbe5ef;
+            font-size: 19px;
+        }
+
+        .government-content {
+            padding: 55px 0;
+        }
+
+        .government-content h2 {
+            font-size: 34px;
+            color: #071d3a;
+            margin-bottom: 10px;
+        }
+
+        .section-description {
+            color: #5b626a;
+            margin-bottom: 30px;
+        }
+
+        /* LISTA MINISTRÓW */
+
+        .minister-list {
+            border-top: 1px solid #cfd5db;
+        }
+
+        .minister {
+            width: 100%;
+            display: grid;
+            grid-template-columns: 110px 1fr auto;
+            gap: 25px;
+            align-items: center;
+
+            padding: 25px 20px;
+
+            background: white;
+
+            border-bottom: 1px solid #d9dde2;
+
+            text-align: left;
+
+            cursor: pointer;
+
+            transition: .15s;
+
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .minister:hover {
+            background: #f1f4f7;
+        }
+
+        .minister-photo {
+            width: 85px;
+            height: 85px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #dce3ea,
+                    #b8c4d0
+                );
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            color: #071d3a;
+
+            font-size: 25px;
+            font-weight: bold;
+        }
+
+        .minister-name {
+            color: #071d3a;
+            font-size: 24px;
+            font-weight: bold;
+
+            margin-bottom: 4px;
+        }
+
+        .minister-position {
+            color: #4e5964;
+            font-size: 16px;
+        }
+
+        .minister-arrow {
+            color: #075a9e;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        /* PANEL PROFILU */
+
+        .profile-overlay {
+            position: fixed;
+
+            inset: 0;
+
+            background:
+                rgba(0, 0, 0, .65);
+
+            display: none;
+
+            align-items: center;
+            justify-content: center;
+
+            z-index: 1000;
+
+            padding: 20px;
+        }
+
+        .profile-overlay.active {
+            display: flex;
+        }
+
+        .profile {
+            background: white;
+
+            width: min(900px, 100%);
+
+            max-height: 90vh;
+
+            overflow-y: auto;
+
+            box-shadow:
+                0 20px 70px rgba(0,0,0,.35);
+        }
+
+        .profile-top {
+            background: #071d3a;
+
+            color: white;
+
+            padding: 35px;
+
+            display: grid;
+
+            grid-template-columns: 130px 1fr auto;
+
+            gap: 25px;
+
+            align-items: center;
+
+            border-bottom: 6px solid #d4213d;
+        }
+
+        .profile-photo {
+            width: 120px;
+            height: 120px;
+
+            background: #dce3ea;
+
+            color: #071d3a;
+
+            display: flex;
+
+            align-items: center;
+            justify-content: center;
+
+            font-size: 35px;
+            font-weight: bold;
+        }
+
+        .profile-top h2 {
+            color: white;
+
+            font-size: 32px;
+
+            margin-bottom: 5px;
+        }
+
+        .profile-top p {
+            color: #dbe5ef;
+        }
+
+        .close-profile {
+            border: 1px solid white;
+
+            background: transparent;
+
+            color: white;
+
+            width: 42px;
+            height: 42px;
+
+            cursor: pointer;
+
+            font-size: 22px;
+        }
+
+        .close-profile:hover {
+            background: white;
+            color: #071d3a;
+        }
+
+        .profile-body {
+            padding: 35px;
+        }
+
+        .profile-body h3 {
+            color: #071d3a;
+
+            font-size: 25px;
+
+            margin-top: 30px;
+            margin-bottom: 10px;
+        }
+
+        .profile-body h3:first-child {
+            margin-top: 0;
+        }
+
+        .profile-body p {
+            color: #444c54;
+
+            font-size: 16px;
+
+            line-height: 1.7;
+        }
+
+        .achievement-list {
+            list-style: none;
+
+            margin-top: 15px;
+        }
+
+        .achievement-list li {
+            padding: 15px 18px;
+
+            margin-bottom: 10px;
+
+            background: #f3f5f7;
+
+            border-left: 5px solid #d4213d;
+
+            color: #333b43;
+        }
+
+        .achievement-list strong {
+            display: block;
+
+            color: #071d3a;
+
+            margin-bottom: 3px;
+        }
+
+        .profile-footer {
+            padding: 20px 35px;
+
+            background: #f1f3f5;
+
+            border-top: 1px solid #d9dde2;
+
+            color: #69727b;
+
+            font-size: 13px;
+        }
+
+        @media (max-width: 700px) {
+
+            .government-header h1 {
+                font-size: 38px;
+            }
+
+            .minister {
+                grid-template-columns: 70px 1fr 20px;
+                gap: 15px;
+                padding: 18px 10px;
+            }
+
+            .minister-photo {
+                width: 65px;
+                height: 65px;
+                font-size: 19px;
+            }
+
+            .minister-name {
+                font-size: 18px;
+            }
+
+            .minister-position {
+                font-size: 14px;
+            }
+
+            .profile-top {
+                grid-template-columns: 80px 1fr 40px;
+                padding: 22px;
+            }
+
+            .profile-photo {
+                width: 75px;
+                height: 75px;
+                font-size: 23px;
+            }
+
+            .profile-top h2 {
+                font-size: 22px;
+            }
+
+            .profile-body {
+                padding: 25px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header class="top">
+
+    <div class="container top-content">
+
+        <div class="brand">
+
+            <div class="logo">
+                RP
+            </div>
+
+            <div>
+                <strong>Portal Administracji</strong>
+                <span>Serwer Minecraft</span>
+            </div>
+
+        </div>
+
+        <button class="menu-button"
+                onclick="toggleMenu()">
+            ☰ MENU
+        </button>
+
+    </div>
+
+</header>
+
+
+<nav id="navigation">
+
+    <div class="container nav-content">
+
+        <a href="index.html">
+            Home
+        </a>
+
+        <a class="active" href="zarzad.html">
+            Zarząd
+        </a>
+
+        <a href="palac-narodowy.html">
+            Pałac Narodowy
+        </a>
+
+        <a href="regulamin.html">
+            Regulamin
+        </a>
+
+        <a href="departament.html">
+            Departament Bezpieczeństwa i Cyfryzacji
+        </a>
+
+    </div>
+
+</nav>
+
+
+<!-- =====================================
+     NAGŁÓWEK
+===================================== -->
+
+<section class="government-header">
+
+    <div class="container">
+
+        <div class="breadcrumbs">
+            Strona główna → Zarząd
+        </div>
+
+        <h1>Zarząd</h1>
+
+        <p>
+            Skład zarządu serwera oraz informacje
+            o osobach odpowiedzialnych za rozwój
+            i funkcjonowanie projektu.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================
+     LISTA
+===================================== -->
+
+<main class="government-content">
+
+    <div class="container">
+
+        <h2>Skład Zarządu</h2>
+
+        <p class="section-description">
+            Wybierz osobę, aby zobaczyć jej profil,
+            historię działalności oraz najważniejsze
+            osiągnięcia w projekcie.
+        </p>
+
+
+        <div class="minister-list">
+
+
+            <!-- OSOBA 1 -->
+
+            <button class="minister"
+                    onclick="openProfile('jan')">
+
+                <div class="minister-photo">
+                    JK
+                </div>
+
+                <div>
+
+                    <div class="minister-name">
+                        Jan Kowalski
+                    </div>
+
+                    <div class="minister-position">
+                        Prezes Zarządu
+                    </div>
+
+                </div>
+
+                <div class="minister-arrow">
+                    ›
+                </div>
+
+            </button>
+
+
+            <!-- OSOBA 2 -->
+
+            <button class="minister"
+                    onclick="openProfile('anna')">
+
+                <div class="minister-photo">
+                    AN
+                </div>
+
+                <div>
+
+                    <div class="minister-name">
+                        Anna Nowak
+                    </div>
+
+                    <div class="minister-position">
+                        Wiceprezes Zarządu
+                    </div>
+
+                </div>
+
+                <div class="minister-arrow">
+                    ›
+                </div>
+
+            </button>
+
+
+            <!-- OSOBA 3 -->
+
+            <button class="minister"
+                    onclick="openProfile('piotr')">
+
+                <div class="minister-photo">
+                    PN
+                </div>
+
+                <div>
+
+                    <div class="minister-name">
+                        Piotr Nowicki
+                    </div>
+
+                    <div class="minister-position">
+                        Minister Administracji
+                    </div>
+
+                </div>
+
+                <div class="minister-arrow">
+                    ›
+                </div>
+
+            </button>
+
+
+            <!-- OSOBA 4 -->
+
+            <button class="minister"
+                    onclick="openProfile('michal')">
+
+                <div class="minister-photo">
+                    MK
+                </div>
+
+                <div>
+
+                    <div class="minister-name">
+                        Michał Kowalczyk
+                    </div>
+
+                    <div class="minister-position">
+                        Minister Bezpieczeństwa i Cyfryzacji
+                    </div>
+
+                </div>
+
+                <div class="minister-arrow">
+                    ›
+                </div>
+
+            </button>
+
+
+        </div>
+
+    </div>
+
+</main>
+
+
+<!-- =====================================
+     PROFILE — JAN
+===================================== -->
+
+<div class="profile-overlay"
+     id="jan">
+
+    <div class="profile">
+
+        <div class="profile-top">
+
+            <div class="profile-photo">
+                JK
+            </div>
+
+            <div>
+
+                <h2>
+                    Jan Kowalski
+                </h2>
+
+                <p>
+                    Prezes Zarządu
+                </p>
+
+            </div>
+
+            <button class="close-profile"
+                    onclick="closeProfile('jan')">
+                ×
+            </button>
+
+        </div>
+
+
+        <div class="profile-body">
+
+            <h3>
+                Informacje
+            </h3>
+
+            <p>
+                Jan Kowalski jest jednym z założycieli
+                projektu i pełni funkcję Prezesa Zarządu.
+                Odpowiada za strategiczny rozwój serwera
+                oraz koordynację pracy administracji.
+            </p>
+
+
+            <h3>
+                Historia działalności
+            </h3>
+
+            <p>
+                Dołączył do projektu w 2024 roku.
+                Początkowo zajmował się organizacją
+                administracji, a następnie objął funkcję
+                Prezesa Zarządu.
+            </p>
+
+
+            <h3>
+                Wkład w projekt
+            </h3>
+
+            <ul class="achievement-list">
+
+                <li>
+                    <strong>Rozwój projektu</strong>
+                    Koordynował rozwój głównych systemów
+                    serwera.
+                </li>
+
+                <li>
+                    <strong>Organizacja administracji</strong>
+                    Stworzył strukturę zarządzania projektem.
+                </li>
+
+                <li>
+                    <strong>Pałac Narodowy</strong>
+                    Nadzorował powstanie Pałacu Narodowego
+                    na serwerze.
+                </li>
+
+            </ul>
+
+        </div>
+
+
+        <div class="profile-footer">
+            Profil członka Zarządu • Portal Administracji
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- =====================================
+     PROFILE — ANNA
+===================================== -->
+
+<div class="profile-overlay"
+     id="anna">
+
+    <div class="profile">
+
+        <div class="profile-top">
+
+            <div class="profile-photo">
+                AN
+            </div>
+
+            <div>
+
+                <h2>
+                    Anna Nowak
+                </h2>
+
+                <p>
+                    Wiceprezes Zarządu
+                </p>
+
+            </div>
+
+            <button class="close-profile"
+                    onclick="closeProfile('anna')">
+                ×
+            </button>
+
+        </div>
+
+
+        <div class="profile-body">
+
+            <h3>Informacje</h3>
+
+            <p>
+                Anna Nowak odpowiada za współpracę
+                pomiędzy poszczególnymi jednostkami
+                administracji.
+            </p>
+
+            <h3>Historia działalności</h3>
+
+            <p>
+                Dołączyła do projektu w 2024 roku.
+                Od początku zajmowała się organizacją
+                zespołu administracyjnego.
+            </p>
+
+            <h3>Wkład w projekt</h3>
+
+            <ul class="achievement-list">
+
+                <li>
+                    <strong>Organizacja zespołu</strong>
+                    Opracowała strukturę współpracy
+                    administracji.
+                </li>
+
+                <li>
+                    <strong>Regulamin</strong>
+                    Brała udział w przygotowaniu
+                    regulaminu serwera.
+                </li>
+
+                <li>
+                    <strong>Rekrutacja</strong>
+                    Koordynowała nabór nowych członków
+                    administracji.
+                </li>
+
+            </ul>
+
+        </div>
+
+        <div class="profile-footer">
+            Profil członka Zarządu • Portal Administracji
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- =====================================
+     PROFILE — PIOTR
+===================================== -->
+
+<div class="profile-overlay"
+     id="piotr">
+
+    <div class="profile">
+
+        <div class="profile-top">
+
+            <div class="profile-photo">
+                PN
+            </div>
+
+            <div>
+
+                <h2>
+                    Piotr Nowicki
+                </h2>
+
+                <p>
+                    Minister Administracji
+                </p>
+
+            </div>
+
+            <button class="close-profile"
+                    onclick="closeProfile('piotr')">
+                ×
+            </button>
+
+        </div>
+
+
+        <div class="profile-body">
+
+            <h3>Informacje</h3>
+
+            <p>
+                Piotr Nowicki zajmuje się bieżącym
+                funkcjonowaniem administracji oraz
+                koordynacją działań poszczególnych
+                jednostek.
+            </p>
+
+            <h3>Historia działalności</h3>
+
+            <p>
+                Dołączył do projektu podczas jego
+                rozwoju i od tego czasu odpowiada
+                za organizację pracy administracji.
+            </p>
+
+            <h3>Wkład w projekt</h3>
+
+            <ul class="achievement-list">
+
+                <li>
+                    <strong>Administracja</strong>
+                    Uporządkował strukturę administracyjną
+                    projektu.
+                </li>
+
+                <li>
+                    <strong>Dokumentacja</strong>
+                    Przygotował dokumentację wewnętrzną.
+                </li>
+
+                <li>
+                    <strong>Procedury</strong>
+                    Opracował procedury działania
+                    administracji.
+                </li>
+
+            </ul>
+
+        </div>
+
+        <div class="profile-footer">
+            Profil członka Zarządu • Portal Administracji
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- =====================================
+     PROFILE — MICHAŁ
+===================================== -->
+
+<div class="profile-overlay"
+     id="michal">
+
+    <div class="profile">
+
+        <div class="profile-top">
+
+            <div class="profile-photo">
+                MK
+            </div>
+
+            <div>
+
+                <h2>
+                    Michał Kowalczyk
+                </h2>
+
+                <p>
+                    Minister Bezpieczeństwa i Cyfryzacji
+                </p>
+
+            </div>
+
+            <button class="close-profile"
+                    onclick="closeProfile('michal')">
+                ×
+            </button>
+
+        </div>
+
+
+        <div class="profile-body">
+
+            <h3>Informacje</h3>
+
+            <p>
+                Michał Kowalczyk odpowiada za
+                bezpieczeństwo serwera oraz rozwój
+                infrastruktury cyfrowej projektu.
+            </p>
+
+            <h3>Historia działalności</h3>
+
+            <p>
+                Dołączył do projektu jako administrator
+                techniczny. Następnie przejął
+                odpowiedzialność za bezpieczeństwo
+                i systemy cyfrowe.
+            </p>
+
+            <h3>Wkład w projekt</h3>
+
+            <ul class="achievement-list">
+
+                <li>
+                    <strong>Bezpieczeństwo</strong>
+                    Przygotował system ochrony serwera
+                    przed nadużyciami.
+                </li>
+
+                <li>
+                    <strong>Infrastruktura</strong>
+                    Rozbudował infrastrukturę techniczną
+                    projektu.
+                </li>
+
+                <li>
+                    <strong>System cyfrowy</strong>
+                    Opracował systemy wspierające
+                    administrację.
+                </li>
+
+            </ul>
+
+        </div>
+
+        <div class="profile-footer">
+            Profil członka Zarządu • Portal Administracji
+        </div>
+
+    </div>
+
+</div>
+
+
+<footer>
+
+    <div class="container footer-grid">
+
+        <div>
+
+            <strong>
+                Portal Administracji
+            </strong>
+
+            <p>
+                Fikcyjny portal administracyjny
+                serwera Minecraft.
+            </p>
+
+        </div>
+
+        <div>
+
+            <strong>
+                Na skróty
+            </strong>
+
+            <a href="index.html">
+                Home
+            </a>
+
+            <a href="zarzad.html">
+                Zarząd
+            </a>
+
+            <a href="regulamin.html">
+                Regulamin
+            </a>
+
+        </div>
+
+        <div>
+
+            <strong>
+                Kontakt
+            </strong>
+
+            <p>
+                Discord: discord.gg/twojserwer
+            </p>
+
+            <p>
+                IP: play.twojserwer.pl
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <div class="copyright">
+        © 2026 Portal Administracji — Serwer Minecraft
+    </div>
+
+</footer>
+
+
+<script>
+
+    function toggleMenu() {
+
+        const navigation =
+            document.getElementById("navigation");
+
+        navigation.classList.toggle("open");
+    }
+
+
+    function openProfile(id) {
+
+        const profile =
+            document.getElementById(id);
+
+        profile.classList.add("active");
+
+        document.body.style.overflow = "hidden";
+    }
+
+
+    function closeProfile(id) {
+
+        const profile =
+            document.getElementById(id);
+
+        profile.classList.remove("active");
+
+        document.body.style.overflow = "";
+    }
+
+
+    /* Kliknięcie poza kartą zamyka profil */
+
+    document.querySelectorAll(".profile-overlay")
+        .forEach(overlay => {
+
+            overlay.addEventListener(
+                "click",
+                function(event) {
+
+                    if (event.target === overlay) {
+
+                        overlay.classList.remove("active");
+
+                        document.body.style.overflow = "";
+                    }
+
+                }
+            );
+
+        });
+
+
+    /* ESC zamyka profil */
+
+    document.addEventListener(
+        "keydown",
+        function(event) {
+
+            if (event.key === "Escape") {
+
+                document.querySelectorAll(
+                    ".profile-overlay.active"
+                ).forEach(profile => {
+
+                    profile.classList.remove("active");
+
+                });
+
+                document.body.style.overflow = "";
+            }
+
+        }
+    );
+
+</script>
+
+</body>
+</html>
